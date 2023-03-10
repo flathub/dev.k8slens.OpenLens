@@ -65,7 +65,8 @@ modules:
             npm_config_arch: arm64
             npm_config_target_arch: arm64
     build-commands:
-      - chmod +x packages/open-lens/binaries/client/linux/*/lens-k8s-proxy packages/open-lens/binaries/client/linux/*/kubectl packages/open-lens/binaries/client/linux/*/helm
+      - chmod +x packages/open-lens/binaries/client/linux/*/lens-k8s-proxy packages/open-lens/binaries/client/linux/*/kubectl
+        packages/open-lens/binaries/client/linux/*/helm
       - HOME="$PWD" yarn config --offline set yarn-offline-mirror "$FLATPAK_BUILDER_BUILDDIR/flatpak-node/yarn-mirror"
       - yarn install --cwd packages/openlens --frozen-lockfile --offline
       - yarn --offline lerna run -- --stream --ignore open-lens build
@@ -98,8 +99,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/lensapp/lens.git
-        tag: v6.4.0-cron.f678bf4
-        commit: 1bf6a41519ca657857ce54a29a4081534d24e5ee
+        tag: v6.5.0-cron.f88555a
+        commit: 430ba700213f81ae178dd4f7a69192d509d51790
         x-checker-data:
           type: anitya
           project-id: 322370
@@ -142,8 +143,8 @@ modules:
 
       - type: file
         only-arches: [x86_64]
-        url: https://storage.googleapis.com/kubernetes-release/release/v1.26.1/bin/linux/amd64/kubectl
-        sha256: d57be22cfa25f7427cfb538cfc8853d763878f8b36c76ce93830f6f2d67c6e5d
+        url: https://storage.googleapis.com/kubernetes-release/release/v1.26.2/bin/linux/amd64/kubectl
+        sha256: fcf86d21fb1a49b012bce7845cf00081d2dd7a59f424b28621799deceb5227b3
         dest: packages/open-lens/binaries/client/linux/x64
         dest-filename: kubectl
         x-checker-data:
@@ -154,8 +155,8 @@ modules:
 
       - type: file
         only-arches: [aarch64]
-        url: https://storage.googleapis.com/kubernetes-release/release/v1.26.1/bin/linux/arm64/kubectl
-        sha256: 4027cb0a2840bc14ec3f18151b3360dd2d1f6ce730ed5ac28bd846c17e7d73f5
+        url: https://storage.googleapis.com/kubernetes-release/release/v1.26.2/bin/linux/arm64/kubectl
+        sha256: 291e85bef77e8440205c873686e9938d7f87c0534e9a491de64e3cc0584295b6
         dest: packages/open-lens/binaries/client/linux/arm64
         dest-filename: kubectl
         x-checker-data:
@@ -166,8 +167,8 @@ modules:
 
       - type: archive
         only-arches: [x86_64]
-        url: https://get.helm.sh/helm-v3.11.1-linux-amd64.tar.gz
-        sha256: 0b1be96b66fab4770526f136f5f1a385a47c41923d33aab0dcb500e0f6c1bf7c
+        url: https://get.helm.sh/helm-v3.11.2-linux-amd64.tar.gz
+        sha256: 781d826daec584f9d50a01f0f7dadfd25a3312217a14aa2fbb85107b014ac8ca
         dest: packages/open-lens/binaries/client/linux/x64
         x-checker-data:
           type: anitya
@@ -177,8 +178,8 @@ modules:
 
       - type: archive
         only-arches: [aarch64]
-        url: https://get.helm.sh/helm-v3.11.1-linux-arm64.tar.gz
-        sha256: 919173e8fb7a3b54d76af9feb92e49e86d5a80c5185020bae8c393fa0f0de1e8
+        url: https://get.helm.sh/helm-v3.11.2-linux-arm64.tar.gz
+        sha256: 0a60baac83c3106017666864e664f52a4e16fbd578ac009f9a85456a9241c5db
         dest: packages/open-lens/binaries/client/linux/arm64
         x-checker-data:
           type: anitya
