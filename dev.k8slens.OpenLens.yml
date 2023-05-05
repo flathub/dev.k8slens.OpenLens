@@ -51,16 +51,16 @@ modules:
         x-checker-data:
           type: anitya
           project-id: 341508
-          url-template: https://github.com/Azure/kubelogin/releases/download/$version/kubelogin-linux-amd64.zip
+          url-template: https://github.com/Azure/kubelogin/releases/download/v$version/kubelogin-linux-amd64.zip
       - type: archive
         only-arches:
           - arm64
-        url: https://github.com/Azure/kubelogin/releases/download/v0.0.28/kubelogin-linux-amd64.zip
+        url: https://github.com/Azure/kubelogin/releases/download/v0.0.28/kubelogin-linux-arm64.zip
         sha256: c30a683eb333292acc30923b4dd5b925cf3dc8ebcd68c3b756bf72b342a962bc
         x-checker-data:
           type: anitya
           project-id: 341508
-          url-template: https://github.com/Azure/kubelogin/releases/download/$version/kubelogin-linux-arm64.zip
+          url-template: https://github.com/Azure/kubelogin/releases/download/v$version/kubelogin-linux-arm64.zip
 
   - name: open-lens
     buildsystem: simple
