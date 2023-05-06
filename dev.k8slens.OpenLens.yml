@@ -71,8 +71,10 @@ modules:
         packages/open-lens/binaries/client/linux/*/helm
 
       - npm ci --offline
-      - export KUBECTL_VERSION=$(cat kubectl-version.txt); npm run build:app -- --
-        --linux dir --${npm_config_arch} --publish never
+      - |
+        export KUBECTL_VERSION=$(cat kubectl-version.txt)
+        ln -srv $XDG_CACHE_HOME/node-gyp $HOME/.electron-gyp
+        npm run build:app -- -- --linux dir --${npm_config_arch} --publish never
 
       # Copy the resulting, unpacked directory to /app.
       - cp -r packages/open-lens/dist/linux-*unpacked "${FLATPAK_DEST}/open-lens"
