@@ -1,0 +1,12 @@
+diff --git a/lerna.json b/lerna.json
+index 763305c..334e37e 100644
+--- a/lerna.json
++++ b/lerna.json
+@@ -4,6 +4,6 @@
+   "version": "independent",
+   "npmClient": "npm",
+   "npmClientArgs": [
+-    "--network-timeout=100000"
++    "--offline"
+   ]
+ }
