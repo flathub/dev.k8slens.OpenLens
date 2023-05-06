@@ -69,7 +69,10 @@ modules:
     build-commands:
       - chmod +x packages/open-lens/binaries/client/linux/*/lens-k8s-proxy packages/open-lens/binaries/client/linux/*/kubectl
         packages/open-lens/binaries/client/linux/*/helm
-      # - HOME="$PWD" yarn config --offline set yarn-offline-mirror "$FLATPAK_BUILDER_BUILDDIR/flatpak-node/yarn-mirror"
+
+      # remove redunant electronVersion from desktop build params
+      - sed -i -e '/electronVersion/d' packages/open-lens/package.json
+
       - npm ci --offline
       - export KUBECTL_VERSION=$(cat kubectl-version.txt); npm run build:app -- --
         --linux dir --${npm_config_arch} --publish never
