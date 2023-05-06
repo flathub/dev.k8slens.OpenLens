@@ -27,6 +27,12 @@ jobs:
         run: |
           git clone https://github.com/lensapp/lens.git --depth=1 --branch=${OPEN_LENS_VERSION} /tmp/lens
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16.x'
+          registry-url: 'https://npm.pkg.github.com'
+
       - name: Regenerate package-lock.json
         run: |
           rm package-lock.json
