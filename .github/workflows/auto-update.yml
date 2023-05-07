@@ -35,8 +35,8 @@ jobs:
 
       - name: Regenerate package-lock.json
         run: |
+          cp package-lock.json /tmp/lens/package-lock.json
           pushd /tmp/lens
-          rm package-lock.json
           npm install -g npm@8.19.4
           npm install
           popd
