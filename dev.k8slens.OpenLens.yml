@@ -70,11 +70,13 @@ modules:
       - chmod +x packages/open-lens/binaries/client/linux/*/lens-k8s-proxy packages/open-lens/binaries/client/linux/*/kubectl
         packages/open-lens/binaries/client/linux/*/helm
 
+      - sed -i -e "s/electron-builder --publish onTag/electron-builder --linux dir --${npm_config_arch} --publish never/" packages/open-lens/package.json
+
       - npm ci --offline
       - |
         export KUBECTL_VERSION=$(cat kubectl-version.txt)
         ln -srv $XDG_CACHE_HOME/node-gyp $HOME/.electron-gyp
-        npm run build:app -- -- --linux dir --${npm_config_arch} --publish never
+        npm run build:app
 
       # Copy the resulting, unpacked directory to /app.
       - cp -r packages/open-lens/dist/linux-*unpacked "${FLATPAK_DEST}/open-lens"
@@ -101,8 +103,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/lensapp/lens.git
-        tag: v6.5.0-alpha.9
-        commit: 2b721ab1c9073f3876758e0a345026590f957198
+        tag: v6.5.0-alpha.10
+        commit: b7ac14df73f41a75d44d45974e38da0d0f5d1387
         # Needs to manually regenerate the package-lock.json
         # Disable it until 6.5 is released
         # x-checker-data:
@@ -209,5 +211,6 @@ modules:
       # Add the flatpak-node-generator generated sources.
       # flatpak-node-generator --electron-node-headers --recursive yarn yarn.lock
       - generated-sources.json
+      # npm install --package-lock-only --workspaces --include-workspace-root
       - type: file
         path: package-lock.json
