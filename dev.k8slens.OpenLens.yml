@@ -52,8 +52,6 @@ modules:
         npm_config_loglevel: verbose
         ELECTRON_SKIP_BINARY_DOWNLOAD: 'true'
         LENS_SKIP_DOWNLOAD_BINARIES: 'true'
-        # Sets the directory where Node is located so that npm won't download the headers.
-        npm_config_nodedir: /usr/lib/sdk/node16
       arch:
         # https://github.com/sass/node-sass/issues/3033#issuecomment-763180778
         # The architecture of Electron, see https://electronjs.org/docs/tutorial/support#supported-platforms
@@ -72,14 +70,16 @@ modules:
 
       - sed -i -e "s/electron-builder --publish onTag/electron-builder --linux dir --${npm_config_arch} --publish never/" packages/open-lens/package.json
 
-      - npm ci --offline
+      - |
+        ln -srv "$XDG_CACHE_HOME/node-gyp" "$HOME/.electron-gyp"
+        npm ci --offline
       - |
         export KUBECTL_VERSION=$(cat kubectl-version.txt)
-        ln -srv $XDG_CACHE_HOME/node-gyp $HOME/.electron-gyp
+        ln -srv "$XDG_CACHE_HOME/node-gyp" "$HOME/.electron-gyp"
         npm run build:app
 
-      # Copy the resulting, unpacked directory to /app.
-      - cp -r packages/open-lens/dist/linux-*unpacked "${FLATPAK_DEST}/open-lens"
+      # Move the resulting, unpacked directory to /app.
+      - mv packages/open-lens/dist/linux-*unpacked "${FLATPAK_DEST}/open-lens"
 
       - install -Dm644 dev.k8slens.OpenLens.desktop "${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop"
       - install -Dm755 open-lens.sh "${FLATPAK_DEST}/bin/open-lens"
