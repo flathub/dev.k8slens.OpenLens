@@ -31,8 +31,8 @@ modules:
       - '*'
     sources:
       - type: archive
-        url: https://github.com/libvips/libvips/archive/refs/tags/v8.14.1.tar.gz
-        sha256: a4a6b282216f7522b42ebb5cd64cfd82a0d1a632033e9c0502f021e945fed641
+        url: https://github.com/libvips/libvips/archive/refs/tags/v8.14.2.tar.gz
+        sha256: feb30b82161cfc30d5ba396c95b08bf9af3110bc960ccc0efecebb45db22deda
         x-checker-data:
           type: anitya
           project-id: 5097
@@ -65,7 +65,8 @@ modules:
             npm_config_arch: arm64
             npm_config_target_arch: arm64
     build-commands:
-      - chmod +x packages/open-lens/binaries/client/linux/*/lens-k8s-proxy packages/open-lens/binaries/client/linux/*/kubectl packages/open-lens/binaries/client/linux/*/helm
+      - chmod +x packages/open-lens/binaries/client/linux/*/lens-k8s-proxy packages/open-lens/binaries/client/linux/*/kubectl
+        packages/open-lens/binaries/client/linux/*/helm
       - HOME="$PWD" yarn config --offline set yarn-offline-mirror "$FLATPAK_BUILDER_BUILDDIR/flatpak-node/yarn-mirror"
       - yarn install --cwd packages/openlens --frozen-lockfile --offline
       - yarn --offline lerna run -- --stream --ignore open-lens build
@@ -142,8 +143,8 @@ modules:
 
       - type: file
         only-arches: [x86_64]
-        url: https://storage.googleapis.com/kubernetes-release/release/v1.26.1/bin/linux/amd64/kubectl
-        sha256: d57be22cfa25f7427cfb538cfc8853d763878f8b36c76ce93830f6f2d67c6e5d
+        url: https://storage.googleapis.com/kubernetes-release/release/v1.27.2/bin/linux/amd64/kubectl
+        sha256: 4f38ee903f35b300d3b005a9c6bfb9a46a57f92e89ae602ef9c129b91dc6c5a5
         dest: packages/open-lens/binaries/client/linux/x64
         dest-filename: kubectl
         x-checker-data:
@@ -166,8 +167,8 @@ modules:
 
       - type: archive
         only-arches: [x86_64]
-        url: https://get.helm.sh/helm-v3.11.1-linux-amd64.tar.gz
-        sha256: 0b1be96b66fab4770526f136f5f1a385a47c41923d33aab0dcb500e0f6c1bf7c
+        url: https://get.helm.sh/helm-v3.12.0-linux-amd64.tar.gz
+        sha256: da36e117d6dbc57c8ec5bab2283222fbd108db86c83389eebe045ad1ef3e2c3b
         dest: packages/open-lens/binaries/client/linux/x64
         x-checker-data:
           type: anitya
