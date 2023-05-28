@@ -38,6 +38,32 @@ modules:
           project-id: 5097
           url-template: https://github.com/libvips/libvips/archive/refs/tags/v$version.tar.gz
 
+  - name: kubelogin
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 kubelogin "${FLATPAK_DEST}/bin/kubelogin"
+    sources:
+      - type: archive
+        strip-components: 2
+        only-arches:
+          - x86_64
+        url: https://github.com/Azure/kubelogin/releases/download/v0.0.28/kubelogin-linux-amd64.zip
+        sha256: c854ae5d704b645aba0e90351ced1add1cd2a3bd13a392883053a371f60b6a4a
+        x-checker-data:
+          type: anitya
+          project-id: 341508
+          url-template: https://github.com/Azure/kubelogin/releases/download/v$version/kubelogin-linux-amd64.zip
+      - type: archive
+        strip-components: 2
+        only-arches:
+          - aarch64
+        url: https://github.com/Azure/kubelogin/releases/download/v0.0.28/kubelogin-linux-arm64.zip
+        sha256: c30a683eb333292acc30923b4dd5b925cf3dc8ebcd68c3b756bf72b342a962bc
+        x-checker-data:
+          type: anitya
+          project-id: 341508
+          url-template: https://github.com/Azure/kubelogin/releases/download/v$version/kubelogin-linux-arm64.zip
+
   - name: open-lens
     buildsystem: simple
     build-options:
