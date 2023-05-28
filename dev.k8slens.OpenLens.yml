@@ -41,9 +41,10 @@ modules:
   - name: kubelogin
     buildsystem: simple
     build-commands:
-      - install -Dm755 ./*/kubelogin "${FLATPAK_DEST}/bin/kubelogin"
+      - install -Dm755 kubelogin "${FLATPAK_DEST}/bin/kubelogin"
     sources:
       - type: archive
+        strip-components: 2
         only-arches:
           - x86_64
         url: https://github.com/Azure/kubelogin/releases/download/v0.0.28/kubelogin-linux-amd64.zip
@@ -53,6 +54,7 @@ modules:
           project-id: 341508
           url-template: https://github.com/Azure/kubelogin/releases/download/v$version/kubelogin-linux-amd64.zip
       - type: archive
+        strip-components: 2
         only-arches:
           - arm64
         url: https://github.com/Azure/kubelogin/releases/download/v0.0.28/kubelogin-linux-arm64.zip
