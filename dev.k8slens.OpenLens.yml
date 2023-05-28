@@ -68,7 +68,8 @@ modules:
       - chmod +x open-lens/binaries/client/linux/*/lens-k8s-proxy open-lens/binaries/client/linux/*/kubectl
         open-lens/binaries/client/linux/*/helm
 
-      - sed -i -e "s/electron-builder --publish onTag/electron-builder --linux dir --${npm_config_arch} --publish never/" open-lens/package.json
+      - sed -i -e "s/electron-builder --publish onTag/electron-builder --linux dir
+        --${npm_config_arch} --publish never/" open-lens/package.json
 
       #  don't specify npm version
       - sed -i -e '/"engines":/{n;d}' package.json
@@ -135,7 +136,7 @@ modules:
 
       - type: file
         url: https://storage.googleapis.com/kubernetes-release/release/stable-1.txt
-        sha256: fa06ed9de3d9cc40e23ecb0ee1a86ca59f2e451e86b0d957493a0c2ef3fa3240
+        sha256: b9779534f493b05e201815e6e107efef90eb49b0dd57ae7f6d2bb10b0a8c8016
         dest-filename: kubectl-version.txt
         x-checker-data:
           type: rotating-url
@@ -167,8 +168,8 @@ modules:
 
       - type: file
         only-arches: [x86_64]
-        url: https://storage.googleapis.com/kubernetes-release/release/v1.27.1/bin/linux/amd64/kubectl
-        sha256: 7fe3a762d926fb068bae32c399880e946e8caf3d903078bea9b169dcd5c17f6d
+        url: https://storage.googleapis.com/kubernetes-release/release/v1.27.2/bin/linux/amd64/kubectl
+        sha256: 4f38ee903f35b300d3b005a9c6bfb9a46a57f92e89ae602ef9c129b91dc6c5a5
         dest: open-lens/binaries/client/linux/x64
         dest-filename: kubectl
         x-checker-data:
@@ -179,8 +180,8 @@ modules:
 
       - type: file
         only-arches: [aarch64]
-        url: https://storage.googleapis.com/kubernetes-release/release/v1.27.1/bin/linux/arm64/kubectl
-        sha256: fd3cb8f16e6ed8aee9955b76e3027ac423b6d1cc7356867310d128082e2db916
+        url: https://storage.googleapis.com/kubernetes-release/release/v1.27.2/bin/linux/arm64/kubectl
+        sha256: 1b0966692e398efe71fe59f913eaec44ffd4468cc1acd00bf91c29fa8ff8f578
         dest: open-lens/binaries/client/linux/arm64
         dest-filename: kubectl
         x-checker-data:
@@ -191,8 +192,8 @@ modules:
 
       - type: archive
         only-arches: [x86_64]
-        url: https://get.helm.sh/helm-v3.11.3-linux-amd64.tar.gz
-        sha256: ca2d5d40d4cdfb9a3a6205dd803b5bc8def00bd2f13e5526c127e9b667974a89
+        url: https://get.helm.sh/helm-v3.12.0-linux-amd64.tar.gz
+        sha256: da36e117d6dbc57c8ec5bab2283222fbd108db86c83389eebe045ad1ef3e2c3b
         dest: open-lens/binaries/client/linux/x64
         x-checker-data:
           type: anitya
