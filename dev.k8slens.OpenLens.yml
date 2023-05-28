@@ -56,7 +56,7 @@ modules:
       - type: archive
         strip-components: 2
         only-arches:
-          - arm64
+          - aarch64
         url: https://github.com/Azure/kubelogin/releases/download/v0.0.28/kubelogin-linux-arm64.zip
         sha256: c30a683eb333292acc30923b4dd5b925cf3dc8ebcd68c3b756bf72b342a962bc
         x-checker-data:
