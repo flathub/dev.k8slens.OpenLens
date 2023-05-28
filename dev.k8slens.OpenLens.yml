@@ -41,7 +41,7 @@ modules:
   - name: kubelogin
     buildsystem: simple
     build-commands:
-      - install -Dm755 bin/*/kubelogin "${FLATPAK_DEST}/bin/kubelogin"
+      - install -Dm755 ./*/kubelogin "${FLATPAK_DEST}/bin/kubelogin"
     sources:
       - type: archive
         only-arches:
