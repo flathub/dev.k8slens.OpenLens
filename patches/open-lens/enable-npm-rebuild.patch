@@ -1,0 +1,13 @@
+diff --git a/open-lens/package.json b/open-lens/package.json
+index 0a7ea12..dde54a0 100644
+--- a/open-lens/package.json
++++ b/open-lens/package.json
+@@ -85,7 +85,7 @@
+     }
+   },
+   "build": {
+-    "npmRebuild": false,
++    "npmRebuild": true,
+     "electronVersion": "22.3.3",
+     "generateUpdatesFilesForAllChannels": true,
+     "files": [

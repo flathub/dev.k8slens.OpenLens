@@ -1,0 +1,23 @@
+diff --git a/package.json b/package.json
+index 5bba9e9..26ca095 100644
+--- a/package.json
++++ b/package.json
+@@ -46,6 +46,5 @@
+     "rimraf": "^4.4.1"
+   },
+   "engines": {
+-    "npm": "9.6.5"
+   }
+ }
+diff --git a/packages/core/package.json b/packages/core/package.json
+index 269d5fc..10d39cb 100644
+--- a/packages/core/package.json
++++ b/packages/core/package.json
+@@ -152,7 +152,6 @@
+     "moment": "^2.29.4",
+     "moment-timezone": "^0.5.40",
+     "node-pty": "0.10.1",
+-    "npm": "^9.6.5",
+     "p-limit": "^3.1.0",
+     "path-to-regexp": "^6.2.0",
+     "proper-lockfile": "^4.1.2",
