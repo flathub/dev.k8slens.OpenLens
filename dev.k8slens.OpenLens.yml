@@ -31,8 +31,8 @@ modules:
       - '*'
     sources:
       - type: archive
-        url: https://github.com/libvips/libvips/archive/refs/tags/v8.14.1.tar.gz
-        sha256: a4a6b282216f7522b42ebb5cd64cfd82a0d1a632033e9c0502f021e945fed641
+        url: https://github.com/libvips/libvips/archive/refs/tags/v8.14.2.tar.gz
+        sha256: feb30b82161cfc30d5ba396c95b08bf9af3110bc960ccc0efecebb45db22deda
         x-checker-data:
           type: anitya
           project-id: 5097
@@ -65,21 +65,33 @@ modules:
             npm_config_arch: arm64
             npm_config_target_arch: arm64
     build-commands:
-      - chmod +x packages/open-lens/binaries/client/linux/*/lens-k8s-proxy packages/open-lens/binaries/client/linux/*/kubectl packages/open-lens/binaries/client/linux/*/helm
-      - HOME="$PWD" yarn config --offline set yarn-offline-mirror "$FLATPAK_BUILDER_BUILDDIR/flatpak-node/yarn-mirror"
-      - yarn install --cwd packages/openlens --frozen-lockfile --offline
-      - yarn --offline lerna run -- --stream --ignore open-lens build
+      - chmod +x open-lens/binaries/client/linux/*/lens-k8s-proxy open-lens/binaries/client/linux/*/kubectl
+        open-lens/binaries/client/linux/*/helm
+
+      - sed -i -e "s/electron-builder --publish onTag/electron-builder --linux dir --${npm_config_arch} --publish never/" open-lens/package.json
+
+      #  don't specify npm version
+      - sed -i -e '/"engines":/{n;d}' package.json
+
       - |
         ln -srv "$XDG_CACHE_HOME/node-gyp" "$HOME/.electron-gyp"
-        yarn --offline lerna run -- --stream --scope open-lens build:app -- --linux dir --${npm_config_arch} --publish never
+        npm ci --offline
+      - |
+        export KUBECTL_VERSION=$(cat kubectl-version.txt)
+        ln -srv "$XDG_CACHE_HOME/node-gyp" "$HOME/.electron-gyp"
+        npm run build
+      - |
+        export KUBECTL_VERSION=$(cat kubectl-version.txt)
+        ln -srv "$XDG_CACHE_HOME/node-gyp" "$HOME/.electron-gyp"
+        npm run build:app
 
-      # Copy the resulting, unpacked directory to /app.
-      - cp -r packages/open-lens/dist/linux-*unpacked "${FLATPAK_DEST}/open-lens"
+      # Move the resulting, unpacked directory to /app.
+      - mv open-lens/dist/linux-*unpacked "${FLATPAK_DEST}/open-lens"
 
       - install -Dm644 dev.k8slens.OpenLens.desktop "${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop"
       - install -Dm755 open-lens.sh "${FLATPAK_DEST}/bin/open-lens"
       - install -Dm644 dev.k8slens.OpenLens.metainfo.xml "${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.metainfo.xml"
-      - install -Dm644 packages/open-lens/build/icons/512x512.png "${FLATPAK_DEST}/share/icons/hicolor/512x512/apps/${FLATPAK_ID}.png"
+      - install -Dm644 open-lens/build/icons/512x512.png "${FLATPAK_DEST}/share/icons/hicolor/512x512/apps/${FLATPAK_ID}.png"
 
       # To allow separate locales
       # https://searchfox.org/mozilla-central/rev/8a4f55bc09ffc5c25dcb4586c51ae4a9fee77b4c/taskcluster/docker/firefox-flatpak/runme.sh#131-133
@@ -98,14 +110,19 @@ modules:
     sources:
       - type: git
         url: https://github.com/lensapp/lens.git
-        tag: v6.4.0-cron.f678bf4
-        commit: 1bf6a41519ca657857ce54a29a4081534d24e5ee
+        tag: v6.5.0
+        commit: 79e4eaa39461488bea3a3d9e872d12ce94e09662
         x-checker-data:
           type: anitya
           project-id: 322370
-          # since v6.4.0 changed to the directory structure used in this build recipe, turn stable-only to true after it's released
-          stable-only: false
+          stable-only: true
           tag-template: v$version
+      - type: patch
+        path: patches/open-lens/lerna-offline.patch
+      - type: patch
+        path: patches/open-lens/read-kubectl-version-from-env.patch
+      - type: patch
+        path: patches/open-lens/set-electron-to-version-in-lockfile.patch
 
       - type: file
         path: open-lens.sh
@@ -117,10 +134,18 @@ modules:
         path: dev.k8slens.OpenLens.desktop
 
       - type: file
+        url: https://storage.googleapis.com/kubernetes-release/release/stable-1.txt
+        sha256: fa06ed9de3d9cc40e23ecb0ee1a86ca59f2e451e86b0d957493a0c2ef3fa3240
+        dest-filename: kubectl-version.txt
+        x-checker-data:
+          type: rotating-url
+          url: https://storage.googleapis.com/kubernetes-release/release/stable-1.txt
+
+      - type: file
         only-arches: [x86_64]
         url: https://github.com/lensapp/lens-k8s-proxy/releases/download/v0.3.0/lens-k8s-proxy-linux-amd64
         sha256: d640037ae4e7b505f14cc0174d89c90f7e5aadc8df6389c51fa17bd33c7e55c6
-        dest: packages/open-lens/binaries/client/linux/x64
+        dest: open-lens/binaries/client/linux/x64
         dest-filename: lens-k8s-proxy
         x-checker-data:
           type: anitya
@@ -132,7 +157,7 @@ modules:
         only-arches: [aarch64]
         url: https://github.com/lensapp/lens-k8s-proxy/releases/download/v0.3.0/lens-k8s-proxy-linux-arm64
         sha256: 86091e268f93e3aba40fb3bbecefdb8dbfece4424addfc0a51d5da79ec24cfd6
-        dest: packages/open-lens/binaries/client/linux/arm64
+        dest: open-lens/binaries/client/linux/arm64
         dest-filename: lens-k8s-proxy
         x-checker-data:
           type: anitya
@@ -142,9 +167,9 @@ modules:
 
       - type: file
         only-arches: [x86_64]
-        url: https://storage.googleapis.com/kubernetes-release/release/v1.26.1/bin/linux/amd64/kubectl
-        sha256: d57be22cfa25f7427cfb538cfc8853d763878f8b36c76ce93830f6f2d67c6e5d
-        dest: packages/open-lens/binaries/client/linux/x64
+        url: https://storage.googleapis.com/kubernetes-release/release/v1.27.1/bin/linux/amd64/kubectl
+        sha256: 7fe3a762d926fb068bae32c399880e946e8caf3d903078bea9b169dcd5c17f6d
+        dest: open-lens/binaries/client/linux/x64
         dest-filename: kubectl
         x-checker-data:
           type: anitya
@@ -154,9 +179,9 @@ modules:
 
       - type: file
         only-arches: [aarch64]
-        url: https://storage.googleapis.com/kubernetes-release/release/v1.26.1/bin/linux/arm64/kubectl
-        sha256: 4027cb0a2840bc14ec3f18151b3360dd2d1f6ce730ed5ac28bd846c17e7d73f5
-        dest: packages/open-lens/binaries/client/linux/arm64
+        url: https://storage.googleapis.com/kubernetes-release/release/v1.27.1/bin/linux/arm64/kubectl
+        sha256: fd3cb8f16e6ed8aee9955b76e3027ac423b6d1cc7356867310d128082e2db916
+        dest: open-lens/binaries/client/linux/arm64
         dest-filename: kubectl
         x-checker-data:
           type: anitya
@@ -166,9 +191,9 @@ modules:
 
       - type: archive
         only-arches: [x86_64]
-        url: https://get.helm.sh/helm-v3.11.1-linux-amd64.tar.gz
-        sha256: 0b1be96b66fab4770526f136f5f1a385a47c41923d33aab0dcb500e0f6c1bf7c
-        dest: packages/open-lens/binaries/client/linux/x64
+        url: https://get.helm.sh/helm-v3.11.3-linux-amd64.tar.gz
+        sha256: ca2d5d40d4cdfb9a3a6205dd803b5bc8def00bd2f13e5526c127e9b667974a89
+        dest: open-lens/binaries/client/linux/x64
         x-checker-data:
           type: anitya
           project-id: 15046
@@ -177,9 +202,9 @@ modules:
 
       - type: archive
         only-arches: [aarch64]
-        url: https://get.helm.sh/helm-v3.11.1-linux-arm64.tar.gz
-        sha256: 919173e8fb7a3b54d76af9feb92e49e86d5a80c5185020bae8c393fa0f0de1e8
-        dest: packages/open-lens/binaries/client/linux/arm64
+        url: https://get.helm.sh/helm-v3.11.3-linux-arm64.tar.gz
+        sha256: 9f58e707dcbe9a3b7885c4e24ef57edfb9794490d72705b33a93fa1f3572cce4
+        dest: open-lens/binaries/client/linux/arm64
         x-checker-data:
           type: anitya
           project-id: 15046
@@ -189,3 +214,6 @@ modules:
       # Add the flatpak-node-generator generated sources.
       # flatpak-node-generator --electron-node-headers --recursive yarn yarn.lock
       - generated-sources.json
+      # npm install --package-lock-only --workspaces --include-workspace-root
+      - type: file
+        path: package-lock.json
