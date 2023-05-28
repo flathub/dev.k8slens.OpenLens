@@ -37,6 +37,7 @@ jobs:
         run: |
           cp package-lock.json /tmp/lens/package-lock.json
           pushd /tmp/lens
+          sed -i -e '/"engines":/{n;d}' package.json
           npm install -g npm@8.19.4
           npm install
           popd
