@@ -45,8 +45,7 @@
     <url type="bugtracker">https://github.com/lensapp/lens/issues</url>
     <url type="help">https://docs.k8slens.dev/</url>
     <releases>
-        <release version="6.5.0-alpha.9" date="2023-05-04"/>
-        <release version="3.11.3" date="2023-04-12"/>
+        <release version="6.5.0" date="2023-05-04"/>
     </releases>
 
     <content_rating type="oars-1.1">
