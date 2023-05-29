@@ -140,6 +140,7 @@ modules:
         tag: v6.5.0
         commit: 79e4eaa39461488bea3a3d9e872d12ce94e09662
         x-checker-data:
+          is-main-source: true
           type: anitya
           project-id: 322370
           stable-only: true
