@@ -47,8 +47,8 @@ modules:
         strip-components: 2
         only-arches:
           - x86_64
-        url: https://github.com/Azure/kubelogin/releases/download/v0.0.28/kubelogin-linux-amd64.zip
-        sha256: c854ae5d704b645aba0e90351ced1add1cd2a3bd13a392883053a371f60b6a4a
+        url: https://github.com/Azure/kubelogin/releases/download/v0.0.29/kubelogin-linux-amd64.zip
+        sha256: 550bc8e82efe665a97deabd041be357f8db9f6764139fb0ad6a014910e9a8b26
         x-checker-data:
           type: anitya
           project-id: 341508
@@ -57,8 +57,8 @@ modules:
         strip-components: 2
         only-arches:
           - aarch64
-        url: https://github.com/Azure/kubelogin/releases/download/v0.0.28/kubelogin-linux-arm64.zip
-        sha256: c30a683eb333292acc30923b4dd5b925cf3dc8ebcd68c3b756bf72b342a962bc
+        url: https://github.com/Azure/kubelogin/releases/download/v0.0.29/kubelogin-linux-arm64.zip
+        sha256: 092c22a944062e6037b5b49524f84fe08111e7613f82e860b769d71ffed23ef0
         x-checker-data:
           type: anitya
           project-id: 341508
@@ -230,8 +230,8 @@ modules:
 
       - type: archive
         only-arches: [aarch64]
-        url: https://get.helm.sh/helm-v3.11.3-linux-arm64.tar.gz
-        sha256: 9f58e707dcbe9a3b7885c4e24ef57edfb9794490d72705b33a93fa1f3572cce4
+        url: https://get.helm.sh/helm-v3.12.0-linux-arm64.tar.gz
+        sha256: 658839fed8f9be2169f5df68e55cb2f0aa731a50df454caf183186766800bbd0
         dest: open-lens/binaries/client/linux/arm64
         x-checker-data:
           type: anitya
