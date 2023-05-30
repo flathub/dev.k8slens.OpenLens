@@ -137,8 +137,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/lensapp/lens.git
-        tag: v6.5.0
-        commit: 79e4eaa39461488bea3a3d9e872d12ce94e09662
+        tag: v6.5.1
+        commit: eaa235bbbf3aed8c8b2933b3ba56cb6cf1b3b133
         x-checker-data:
           is-main-source: true
           type: anitya
