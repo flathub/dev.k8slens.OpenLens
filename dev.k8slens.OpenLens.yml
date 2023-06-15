@@ -18,7 +18,7 @@ finish-args:
   - --system-talk-name=org.freedesktop.login1
   # We use .kube/config to know what clusters/contexts are set up
   - --filesystem=~/.kube/config
-  # It's common to run minikube for experimenting, so it should be fine to read this dir
+  # It's common to run minikube for experimenting
   - --filesystem=~/.minikube
   - --persist=.k8slens
 modules:
