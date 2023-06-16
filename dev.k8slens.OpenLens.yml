@@ -64,6 +64,25 @@ modules:
           project-id: 341508
           url-template: https://github.com/Azure/kubelogin/releases/download/v$version/kubelogin-linux-arm64.zip
 
+  - name: gcloud
+    buildsystem: simple
+    build-commands:
+      - mv gcloud "${FLATPAK_DEST}/gcloud"
+      - ln -sf "${FLATPAK_DEST}/bin/gcloud" "${FLATPAK_DEST}/gcloud/bin/gcloud"
+    sources:
+      - type: archive
+        dest: gcloud
+        only-arches:
+          - x86_64
+        url: https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-435.0.1-linux-x86_64.tar.gz
+        sha256: 98296964ead5e99f98290b60e69826671334a088a38e32cced6dbddace24a204
+      - type: archive
+        dest: gcloud
+        only-arches:
+          - aarch64
+        url: https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-435.0.1-linux-arm.tar.gz
+        sha256: bd3fadd38c6e157e33064d622b4c8ea116830fab01d8976befb81b89072233a2
+
   - name: open-lens
     buildsystem: simple
     build-options:
