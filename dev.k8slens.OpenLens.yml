@@ -195,8 +195,8 @@ modules:
 
       - type: file
         only-arches: [x86_64]
-        url: https://storage.googleapis.com/kubernetes-release/release/v1.27.2/bin/linux/amd64/kubectl
-        sha256: 4f38ee903f35b300d3b005a9c6bfb9a46a57f92e89ae602ef9c129b91dc6c5a5
+        url: https://storage.googleapis.com/kubernetes-release/release/v1.27.3/bin/linux/amd64/kubectl
+        sha256: fba6c062e754a120bc8105cde1344de200452fe014a8759e06e4eec7ed258a09
         dest: open-lens/binaries/client/linux/x64
         dest-filename: kubectl
         x-checker-data:
@@ -207,8 +207,8 @@ modules:
 
       - type: file
         only-arches: [aarch64]
-        url: https://storage.googleapis.com/kubernetes-release/release/v1.27.2/bin/linux/arm64/kubectl
-        sha256: 1b0966692e398efe71fe59f913eaec44ffd4468cc1acd00bf91c29fa8ff8f578
+        url: https://storage.googleapis.com/kubernetes-release/release/v1.27.3/bin/linux/arm64/kubectl
+        sha256: 7bb7fec4e28e0b50b603d64e47629e812408751bd1e0ce059b2fee83b0e3ff6f
         dest: open-lens/binaries/client/linux/arm64
         dest-filename: kubectl
         x-checker-data:
@@ -219,8 +219,8 @@ modules:
 
       - type: archive
         only-arches: [x86_64]
-        url: https://get.helm.sh/helm-v3.12.0-linux-amd64.tar.gz
-        sha256: da36e117d6dbc57c8ec5bab2283222fbd108db86c83389eebe045ad1ef3e2c3b
+        url: https://get.helm.sh/helm-v3.12.1-linux-amd64.tar.gz
+        sha256: 1a7074f58ef7190f74ce6db5db0b70e355a655e2013c4d5db2317e63fa9e3dea
         dest: open-lens/binaries/client/linux/x64
         x-checker-data:
           type: anitya
@@ -230,8 +230,8 @@ modules:
 
       - type: archive
         only-arches: [aarch64]
-        url: https://get.helm.sh/helm-v3.12.0-linux-arm64.tar.gz
-        sha256: 658839fed8f9be2169f5df68e55cb2f0aa731a50df454caf183186766800bbd0
+        url: https://get.helm.sh/helm-v3.12.1-linux-arm64.tar.gz
+        sha256: 50548d4fedef9d8d01d1ed5a2dd5c849271d1017127417dc4c7ef6777ae68f7e
         dest: open-lens/binaries/client/linux/arm64
         x-checker-data:
           type: anitya
