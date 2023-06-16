@@ -64,24 +64,59 @@ modules:
           project-id: 341508
           url-template: https://github.com/Azure/kubelogin/releases/download/v$version/kubelogin-linux-arm64.zip
 
-  - name: gcloud
+  - name: google-cloud-cli
     buildsystem: simple
+    build-options:
+      arch:
+        x86_64:
+          env:
+            ARCH: x86_64
+        aarch64:
+          env:
+            ARCH: arm
     build-commands:
-      - mv gcloud "${FLATPAK_DEST}/gcloud"
-      - ln -sf "${FLATPAK_DEST}/bin/gcloud" "${FLATPAK_DEST}/gcloud/bin/gcloud"
+      - mv google-cloud-cli "${FLATPAK_DEST}/google-cloud-cli"
+      - ln -sf "${FLATPAK_DEST}/google-cloud-cli/bin/gcloud" "${FLATPAK_DEST}/bin/gcloud"
+      - |
+        manifests=(
+            "gke-gcloud-auth-plugin-linux-${ARCH}.manifest"
+            "gke-gcloud-auth-plugin-linux-${ARCH}.snapshot.json"
+            "gke-gcloud-auth-plugin.manifest"
+            "gke-gcloud-auth-plugin.snapshot.json"
+        )
+        for item in ${manifests[@]}; do
+            install -Dm644 \
+                "google-cloud-cli-gke-gcloud-auth-plugin/.install/${item}" \
+                "${FLATPAK_DEST}/google-cloud-cli/.install/${item}"
+        done
+      - install -Dm755 google-cloud-cli-gke-gcloud-auth-plugin/bin/gke-gcloud-auth-plugin "${FLATPAK_DEST}/google-cloud-cli/bin/gke-gcloud-auth-plugin"
+      - ln -sf "${FLATPAK_DEST}/google-cloud-cli/bin/gke-gcloud-auth-plugin" "${FLATPAK_DEST}/bin/gke-gcloud-auth-plugin"
     sources:
       - type: archive
-        dest: gcloud
+        dest: google-cloud-cli
         only-arches:
           - x86_64
         url: https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-435.0.1-linux-x86_64.tar.gz
         sha256: 98296964ead5e99f98290b60e69826671334a088a38e32cced6dbddace24a204
       - type: archive
-        dest: gcloud
+        dest: google-cloud-cli
         only-arches:
           - aarch64
         url: https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-435.0.1-linux-arm.tar.gz
         sha256: bd3fadd38c6e157e33064d622b4c8ea116830fab01d8976befb81b89072233a2
+
+      - type: archive
+        dest: google-cloud-cli-gke-gcloud-auth-plugin
+        only-arches:
+          - x86_64
+        url: https://dl.google.com/dl/cloudsdk/release/downloads/for_packagers/linux/google-cloud-cli-gke-gcloud-auth-plugin_435.0.1.orig_amd64.tar.gz
+        sha256: d4563228dc8591e55f4aee054484a9a9b8d178d57571d0d0d653f6d9e5a9abb6
+      - type: archive
+        dest: google-cloud-cli-gke-gcloud-auth-plugin
+        only-arches:
+          - aarch64
+        url: https://dl.google.com/dl/cloudsdk/release/downloads/for_packagers/linux/google-cloud-cli-gke-gcloud-auth-plugin_435.0.1.orig_aarch64.tar.gz
+        sha256: 27e15b9cffbce16018ed2d4f99e5e9cc7a3206f938ed75b30a48a030e6b770ea
 
   - name: open-lens
     buildsystem: simple
