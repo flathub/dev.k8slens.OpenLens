@@ -74,7 +74,7 @@ modules:
         only-arches:
           - x86_64
         url: https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
-        sha256: de5995dc0292c1093a5f458aad90d1bc18fb67b7e79134a35440095a5de3e1b6
+        sha256: bbf0555a3eff17a31bd624b12bedab8994fa905a0e65fa6156160363aec384e3
         x-checker-data:
           type: rotating-url
           url: https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
@@ -82,7 +82,7 @@ modules:
         only-arches:
           - aarch64
         url: https://awscli.amazonaws.com/awscli-exe-linux-aarch64.zip
-        sha256: 4a5be0e063c2d6aaea77831f96993e6369fce84f54005e91167498113d139e25
+        sha256: 2313c6a77e064e309851e17ce57a0b3faa768c1d8fcb05456971d8704215876b
         x-checker-data:
           type: rotating-url
           url: https://awscli.amazonaws.com/awscli-exe-linux-aarch64.zip
@@ -112,7 +112,8 @@ modules:
                 "google-cloud-cli-gke-gcloud-auth-plugin/.install/${item}" \
                 "${FLATPAK_DEST}/google-cloud-cli/.install/${item}"
         done
-      - install -Dm755 google-cloud-cli-gke-gcloud-auth-plugin/bin/gke-gcloud-auth-plugin "${FLATPAK_DEST}/google-cloud-cli/bin/gke-gcloud-auth-plugin"
+      - install -Dm755 google-cloud-cli-gke-gcloud-auth-plugin/bin/gke-gcloud-auth-plugin
+        "${FLATPAK_DEST}/google-cloud-cli/bin/gke-gcloud-auth-plugin"
       - ln -sf "${FLATPAK_DEST}/google-cloud-cli/bin/gke-gcloud-auth-plugin" "${FLATPAK_DEST}/bin/gke-gcloud-auth-plugin"
     sources:
       - type: archive
