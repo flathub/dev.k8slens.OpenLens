@@ -12,7 +12,8 @@ finish-args:
   - --device=dri
   - --share=ipc
   - --share=network
-  - --socket=x11
+  - --socket=wayland
+  - --socket=fallback-x11
   - --socket=ssh-auth
   - --talk-name=org.freedesktop.Notifications
   - --system-talk-name=org.freedesktop.login1
@@ -63,6 +64,28 @@ modules:
           type: anitya
           project-id: 341508
           url-template: https://github.com/Azure/kubelogin/releases/download/v$version/kubelogin-linux-arm64.zip
+
+  - name: aws-cli
+    buildsystem: simple
+    build-commands:
+      - ./install -i "${FLATPAK_DEST}/aws-cli" -b "${FLATPAK_DEST}/bin"
+    sources:
+      - type: archive
+        only-arches:
+          - x86_64
+        url: https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
+        sha256: de5995dc0292c1093a5f458aad90d1bc18fb67b7e79134a35440095a5de3e1b6
+        x-checker-data:
+          type: rotating-url
+          url: https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
+      - type: archive
+        only-arches:
+          - aarch64
+        url: https://awscli.amazonaws.com/awscli-exe-linux-aarch64.zip
+        sha256: 4a5be0e063c2d6aaea77831f96993e6369fce84f54005e91167498113d139e25
+        x-checker-data:
+          type: rotating-url
+          url: https://awscli.amazonaws.com/awscli-exe-linux-aarch64.zip
 
   - name: google-cloud-cli
     buildsystem: simple

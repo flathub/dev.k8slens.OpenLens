@@ -1,7 +1,7 @@
 name: Auto update
 
 on:
-  push:
+  pull_request:
 
 jobs:
   update:
@@ -44,12 +44,16 @@ jobs:
           cp /tmp/lens/package-lock.json .
           git add package-lock.json
 
+          echo "PACKAGE_LOCK_CHANGED=$(git diff --exit-code package-lock.json)" >> $GITHUB_ENV
+
       - name: Update Node.js generated sources
+        if: env.PACKAGE_LOCK_CHANGED == 1
         run: |
           flatpak-node-generator --electron-node-headers --recursive npm /tmp/lens/package-lock.json -o generated-sources.json
           git add generated-sources.json
 
       - name: Commit updates
+        if: env.PACKAGE_LOCK_CHANGED == 1
         run: |
           set -e
 
