@@ -12,7 +12,8 @@ finish-args:
   - --device=dri
   - --share=ipc
   - --share=network
-  - --socket=x11
+  - --socket=wayland
+  - --socket=fallback-x11
   - --socket=ssh-auth
   - --talk-name=org.freedesktop.Notifications
   - --system-talk-name=org.freedesktop.login1
