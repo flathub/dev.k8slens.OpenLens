@@ -1,5 +1,5 @@
 [Desktop Entry]
-Name=Open Lens
+Name=Lens Desktop Core
 Exec=open-lens %u
 Terminal=false
 Type=Application

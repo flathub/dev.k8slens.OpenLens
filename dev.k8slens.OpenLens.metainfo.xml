@@ -3,11 +3,11 @@
     <id>dev.k8slens.OpenLens</id>
     <metadata_license>CC0-1.0</metadata_license>
     <project_license>MIT</project_license>
-    <name>Open Lens</name>
+    <name>Lens Desktop Core</name>
     <summary>The Kubernetes IDE</summary>
     <description>
         <p>
-            Open Lens is the open-source core version of the Lens Desktop.
+            Lens Desktop Core is the open-source core version of the Lens Desktop.
 
             Lens is the most powerful IDE for people who need to deal with Kubernetes clusters on a
             daily basis. Ensure your clusters are properly setup and configured. Enjoy increased
