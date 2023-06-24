@@ -21,6 +21,9 @@ finish-args:
   - --filesystem=~/.kube/config
   # It's common to run minikube for experimenting
   - --filesystem=~/.minikube
+  # cloud providers config/creds
+  - --filesystem=~/.aws
+  - --filesystem=xdg-config/gcloud
   - --persist=.k8slens
 modules:
   - shared-modules/libsecret/libsecret.json
