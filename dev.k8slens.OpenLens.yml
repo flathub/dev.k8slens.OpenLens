@@ -51,8 +51,8 @@ modules:
         strip-components: 2
         only-arches:
           - x86_64
-        url: https://github.com/Azure/kubelogin/releases/download/v0.0.30/kubelogin-linux-amd64.zip
-        sha256: 18e0d17926a8d95786ce901dbe854ef2a495817658748b4a8a68774b84a61453
+        url: https://github.com/Azure/kubelogin/releases/download/v0.0.31/kubelogin-linux-amd64.zip
+        sha256: 476bf015d07fa22afb612381444089420b157bdf92ed6764adc8ac7e4e79b557
         x-checker-data:
           type: anitya
           project-id: 341508
@@ -61,8 +61,8 @@ modules:
         strip-components: 2
         only-arches:
           - aarch64
-        url: https://github.com/Azure/kubelogin/releases/download/v0.0.30/kubelogin-linux-arm64.zip
-        sha256: bedba5693a4841e3878b52d313fa7b34f17d2349e519a1cb565a8d670966b2f8
+        url: https://github.com/Azure/kubelogin/releases/download/v0.0.31/kubelogin-linux-arm64.zip
+        sha256: 0859a24ba14bbde07f8932c5a031e159b0a032e55a2f52e83520442c4a8325c8
         x-checker-data:
           type: anitya
           project-id: 341508
@@ -276,8 +276,8 @@ modules:
 
       - type: file
         only-arches: [x86_64]
-        url: https://storage.googleapis.com/kubernetes-release/release/v1.27.3/bin/linux/amd64/kubectl
-        sha256: fba6c062e754a120bc8105cde1344de200452fe014a8759e06e4eec7ed258a09
+        url: https://storage.googleapis.com/kubernetes-release/release/v1.27.4/bin/linux/amd64/kubectl
+        sha256: 4685bfcf732260f72fce58379e812e091557ef1dfc1bc8084226c7891dd6028f
         dest: open-lens/binaries/client/linux/x64
         dest-filename: kubectl
         x-checker-data:
@@ -288,8 +288,8 @@ modules:
 
       - type: file
         only-arches: [aarch64]
-        url: https://storage.googleapis.com/kubernetes-release/release/v1.27.3/bin/linux/arm64/kubectl
-        sha256: 7bb7fec4e28e0b50b603d64e47629e812408751bd1e0ce059b2fee83b0e3ff6f
+        url: https://storage.googleapis.com/kubernetes-release/release/v1.27.4/bin/linux/arm64/kubectl
+        sha256: 5178cbb51dcfff286c20bc847d64dd35cd5993b81a2e3609581377a520a6425d
         dest: open-lens/binaries/client/linux/arm64
         dest-filename: kubectl
         x-checker-data:
