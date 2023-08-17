@@ -276,8 +276,8 @@ modules:
 
       - type: file
         only-arches: [x86_64]
-        url: https://storage.googleapis.com/kubernetes-release/release/v1.27.4/bin/linux/amd64/kubectl
-        sha256: 4685bfcf732260f72fce58379e812e091557ef1dfc1bc8084226c7891dd6028f
+        url: https://storage.googleapis.com/kubernetes-release/release/v1.28.0/bin/linux/amd64/kubectl
+        sha256: 4717660fd1466ec72d59000bb1d9f5cdc91fac31d491043ca62b34398e0799ce
         dest: open-lens/binaries/client/linux/x64
         dest-filename: kubectl
         x-checker-data:
@@ -288,8 +288,8 @@ modules:
 
       - type: file
         only-arches: [aarch64]
-        url: https://storage.googleapis.com/kubernetes-release/release/v1.27.4/bin/linux/arm64/kubectl
-        sha256: 5178cbb51dcfff286c20bc847d64dd35cd5993b81a2e3609581377a520a6425d
+        url: https://storage.googleapis.com/kubernetes-release/release/v1.28.0/bin/linux/arm64/kubectl
+        sha256: f5484bd9cac66b183c653abed30226b561f537d15346c605cc81d98095f1717c
         dest: open-lens/binaries/client/linux/arm64
         dest-filename: kubectl
         x-checker-data:
