@@ -252,8 +252,8 @@ modules:
 
       - type: file
         only-arches: [x86_64]
-        url: https://github.com/lensapp/lens-k8s-proxy/releases/download/v0.3.0/lens-k8s-proxy-linux-amd64
-        sha256: d640037ae4e7b505f14cc0174d89c90f7e5aadc8df6389c51fa17bd33c7e55c6
+        url: https://github.com/lensapp/lens-k8s-proxy/releases/download/v0.3.1/lens-k8s-proxy-linux-amd64
+        sha256: b9c273101cf7b6aee18bbad71ecb7489714e6127cbfd33b2ec86c3efd4e9622f
         dest: open-lens/binaries/client/linux/x64
         dest-filename: lens-k8s-proxy
         x-checker-data:
@@ -264,8 +264,8 @@ modules:
 
       - type: file
         only-arches: [aarch64]
-        url: https://github.com/lensapp/lens-k8s-proxy/releases/download/v0.3.0/lens-k8s-proxy-linux-arm64
-        sha256: 86091e268f93e3aba40fb3bbecefdb8dbfece4424addfc0a51d5da79ec24cfd6
+        url: https://github.com/lensapp/lens-k8s-proxy/releases/download/v0.3.1/lens-k8s-proxy-linux-arm64
+        sha256: dd264130af03c6a8c90a7df9cf4e931a14815273201ca8033d79e80fce7a2758
         dest: open-lens/binaries/client/linux/arm64
         dest-filename: lens-k8s-proxy
         x-checker-data:
