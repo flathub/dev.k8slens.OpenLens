@@ -244,7 +244,7 @@ modules:
 
       - type: file
         url: https://storage.googleapis.com/kubernetes-release/release/stable-1.txt
-        sha256: faf2e13a492a185963a0021f836515d9d0c2b892f1c843a2912905e18627d3a1
+        sha256: 9fd96373efc785080af10bb2e16bfb73ad147ffabb73d0654016b99d87fed941
         dest-filename: kubectl-version.txt
         x-checker-data:
           type: rotating-url
