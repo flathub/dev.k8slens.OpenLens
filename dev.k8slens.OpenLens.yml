@@ -300,8 +300,8 @@ modules:
 
       - type: archive
         only-arches: [x86_64]
-        url: https://get.helm.sh/helm-v3.12.3-linux-amd64.tar.gz
-        sha256: 1b2313cd198d45eab00cc37c38f6b1ca0a948ba279c29e322bdf426d406129b5
+        url: https://get.helm.sh/helm-v3.13.0-linux-amd64.tar.gz
+        sha256: 138676351483e61d12dfade70da6c03d471bbdcac84eaadeb5e1d06fa114a24f
         dest: open-lens/binaries/client/linux/x64
         x-checker-data:
           type: anitya
@@ -311,8 +311,8 @@ modules:
 
       - type: archive
         only-arches: [aarch64]
-        url: https://get.helm.sh/helm-v3.12.3-linux-arm64.tar.gz
-        sha256: 79ef06935fb47e432c0c91bdefd140e5b543ec46376007ca14a52e5ed3023088
+        url: https://get.helm.sh/helm-v3.13.0-linux-arm64.tar.gz
+        sha256: d12a0e73a7dbff7d89d13e0c6eb73f5095f72d70faea30531941d320678904d2
         dest: open-lens/binaries/client/linux/arm64
         x-checker-data:
           type: anitya
