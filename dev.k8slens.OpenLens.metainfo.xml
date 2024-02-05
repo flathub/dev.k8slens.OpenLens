@@ -5,6 +5,7 @@
     <project_license>MIT</project_license>
     <name>Open Lens</name>
     <summary>The Kubernetes IDE</summary>
+    <developer_name>Mirantis, Inc</developer_name>
     <description>
         <p>
             Open Lens is the open-source core version of the Lens Desktop.
