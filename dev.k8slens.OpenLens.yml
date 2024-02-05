@@ -23,7 +23,7 @@ finish-args:
   - --filesystem=~/.minikube
   # cloud providers config/creds
   - --filesystem=~/.aws
-  - --filesystem=xdg-config/gcloud
+  - --filesystem=~/.config/gcloud
   - --persist=.k8slens
 modules:
   - shared-modules/libsecret/libsecret.json
