@@ -1,9 +1,9 @@
 app-id: dev.k8slens.OpenLens
 runtime: org.freedesktop.Platform
-runtime-version: '22.08'
+runtime-version: '23.08'
 sdk: org.freedesktop.Sdk
 base: org.electronjs.Electron2.BaseApp
-base-version: '22.08'
+base-version: '23.08'
 sdk-extensions:
   # Node.js version: https://github.com/lensapp/lens/blob/master/.github/workflows/publish-release-npm.yml#L20
   - org.freedesktop.Sdk.Extension.node16
