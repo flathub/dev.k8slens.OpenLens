@@ -19,6 +19,7 @@
         <p>Note: Due to sandboxing, if you find it unable to read your config, please run it with <code>flatpak
             run --filesystem=/path/to/your/config:ro dev.k8slens.OpenLens</code>.</p>
     </description>
+    <launchable type="desktop-id">dev.k8slens.OpenLens.desktop</launchable>
     <screenshots>
         <screenshot type="default">
             <image>https://k8slens.dev/images/lens-5-screenshot.png</image>
