@@ -51,8 +51,8 @@ modules:
         strip-components: 2
         only-arches:
           - x86_64
-        url: https://github.com/Azure/kubelogin/releases/download/v0.1.0/kubelogin-linux-amd64.zip
-        sha256: be6247bed2a901b986c7edf2b106618480eb60aa3a47708149f0c62e58ebbab9
+        url: https://github.com/Azure/kubelogin/releases/download/v0.1.1/kubelogin-linux-amd64.zip
+        sha256: 51938ead06738bce6bb8fa4418fe043a5106a7d8bad037a65b57170c4f3fba0e
         x-checker-data:
           type: anitya
           project-id: 341508
@@ -61,8 +61,8 @@ modules:
         strip-components: 2
         only-arches:
           - aarch64
-        url: https://github.com/Azure/kubelogin/releases/download/v0.1.0/kubelogin-linux-arm64.zip
-        sha256: 464d99c83132c35ef898012551d9f087616bac393e99eb4a2e7d2955c47133a0
+        url: https://github.com/Azure/kubelogin/releases/download/v0.1.1/kubelogin-linux-arm64.zip
+        sha256: cc65e86d4aabc087ae2930e4d721435b862fd36674be78ff41a0034f87b626fb
         x-checker-data:
           type: anitya
           project-id: 341508
