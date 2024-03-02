@@ -77,7 +77,7 @@ modules:
         only-arches:
           - x86_64
         url: https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
-        sha256: c939005170508b19f53730ead3e15b959ec2d9d078a44668e43275864d73ef2f
+        sha256: 711df4aaa91d9ebb55b9c92d7562890cc4f000efafa163c09bdb03be3d35de1a
         x-checker-data:
           type: rotating-url
           url: https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
@@ -85,7 +85,7 @@ modules:
         only-arches:
           - aarch64
         url: https://awscli.amazonaws.com/awscli-exe-linux-aarch64.zip
-        sha256: bcea6ebb59467815d5b0f854a77a2042029d8eca65d8033c6ec426e39b8bfc5f
+        sha256: 1a33e4f7dd5dd02b9d23ff35477020f3edf0751bba5885de1b7d3e495db85246
         x-checker-data:
           type: rotating-url
           url: https://awscli.amazonaws.com/awscli-exe-linux-aarch64.zip
