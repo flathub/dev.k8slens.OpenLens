@@ -35,8 +35,8 @@ modules:
       - '*'
     sources:
       - type: archive
-        url: https://github.com/libvips/libvips/archive/refs/tags/v8.15.1.tar.gz
-        sha256: 5701445a076465a3402a135d13c0660d909beb8efc4f00fbbe82392e243497f2
+        url: https://github.com/libvips/libvips/archive/refs/tags/v8.15.2a.tar.gz
+        sha256: e59d50fd7d4594b86b86e6cc03e7c8ec7fbeaae910cf0e525f45e7adfe52cba6
         x-checker-data:
           type: anitya
           project-id: 5097
@@ -77,7 +77,7 @@ modules:
         only-arches:
           - x86_64
         url: https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
-        sha256: 0c4174b2d8a3a587006388f27e6cde9e2e93920ed6caa2e31ce96bf12b5c36a8
+        sha256: 023588dd585299ea78bec7452152bb8cb15eebd44e9f0a0838f0cdaac1b087f6
         x-checker-data:
           type: rotating-url
           url: https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
@@ -85,7 +85,7 @@ modules:
         only-arches:
           - aarch64
         url: https://awscli.amazonaws.com/awscli-exe-linux-aarch64.zip
-        sha256: 982b95ad284765fb81eac32a3edb68afe6343ea9b1159efb536fdd17f764da9d
+        sha256: 1ddde54c344d1fd26a145011d23cc6f7c167733f9a4b7820631590687e5a05da
         x-checker-data:
           type: rotating-url
           url: https://awscli.amazonaws.com/awscli-exe-linux-aarch64.zip
@@ -300,8 +300,8 @@ modules:
 
       - type: archive
         only-arches: [x86_64]
-        url: https://get.helm.sh/helm-v3.14.2-linux-amd64.tar.gz
-        sha256: 0885a501d586c1e949e9b113bf3fb3290b0bbf74db9444a1d8c2723a143006a5
+        url: https://get.helm.sh/helm-v3.14.3-linux-amd64.tar.gz
+        sha256: 3c90f24e180f8c207b8a18e5ec82cb0fa49858a7a0a86e4ed52a98398681e00b
         dest: open-lens/binaries/client/linux/x64
         x-checker-data:
           type: anitya
@@ -311,8 +311,8 @@ modules:
 
       - type: archive
         only-arches: [aarch64]
-        url: https://get.helm.sh/helm-v3.14.2-linux-arm64.tar.gz
-        sha256: c65d6a9557bb359abc2c0d26670de850b52327dc3976ad6f9e14c298ea3e1b61
+        url: https://get.helm.sh/helm-v3.14.3-linux-arm64.tar.gz
+        sha256: 85e1573e76fa60af14ba7e9ec75db2129b6884203be866893fa0b3f7e41ccd5e
         dest: open-lens/binaries/client/linux/arm64
         x-checker-data:
           type: anitya
