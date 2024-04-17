@@ -35,8 +35,8 @@ modules:
       - '*'
     sources:
       - type: archive
-        url: https://github.com/libvips/libvips/archive/refs/tags/v8.15.1.tar.gz
-        sha256: 5701445a076465a3402a135d13c0660d909beb8efc4f00fbbe82392e243497f2
+        url: https://github.com/libvips/libvips/archive/refs/tags/v8.15.2a.tar.gz
+        sha256: e59d50fd7d4594b86b86e6cc03e7c8ec7fbeaae910cf0e525f45e7adfe52cba6
         x-checker-data:
           type: anitya
           project-id: 5097
@@ -77,7 +77,7 @@ modules:
         only-arches:
           - x86_64
         url: https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
-        sha256: 0c4174b2d8a3a587006388f27e6cde9e2e93920ed6caa2e31ce96bf12b5c36a8
+        sha256: b829461f1750e7355dcdad9d388c296be5fd7633b4c36ced28ec0e18879778c6
         x-checker-data:
           type: rotating-url
           url: https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
@@ -85,7 +85,7 @@ modules:
         only-arches:
           - aarch64
         url: https://awscli.amazonaws.com/awscli-exe-linux-aarch64.zip
-        sha256: 982b95ad284765fb81eac32a3edb68afe6343ea9b1159efb536fdd17f764da9d
+        sha256: f3b804187aa73db80429f044cad7c97a3d2588892ee83794523b2cd348329fd6
         x-checker-data:
           type: rotating-url
           url: https://awscli.amazonaws.com/awscli-exe-linux-aarch64.zip
@@ -244,7 +244,7 @@ modules:
 
       - type: file
         url: https://storage.googleapis.com/kubernetes-release/release/stable-1.txt
-        sha256: 94d1d1b39a6818762d490af20aa699187ae3cf303c6646ae528a943191ccbbde
+        sha256: e421fb62e0c36af1af1040ed49dbac7345831137deb06247b1e9694a05ddea3f
         dest-filename: kubectl-version.txt
         x-checker-data:
           type: rotating-url
@@ -276,8 +276,8 @@ modules:
 
       - type: file
         only-arches: [x86_64]
-        url: https://storage.googleapis.com/kubernetes-release/release/v1.29.2/bin/linux/amd64/kubectl
-        sha256: 7816d067740f47f949be826ac76943167b7b3a38c4f0c18b902fffa8779a5afa
+        url: https://storage.googleapis.com/kubernetes-release/release/v1.29.4/bin/linux/amd64/kubectl
+        sha256: 10e343861c3cb0010161e703307ba907add2aeeeaffc6444779ad915f9889c88
         dest: open-lens/binaries/client/linux/x64
         dest-filename: kubectl
         x-checker-data:
@@ -288,8 +288,8 @@ modules:
 
       - type: file
         only-arches: [aarch64]
-        url: https://storage.googleapis.com/kubernetes-release/release/v1.29.2/bin/linux/arm64/kubectl
-        sha256: 3507ecb4224cf05ae2151a98d4932253624e7762159936d5347b19fe037655ca
+        url: https://storage.googleapis.com/kubernetes-release/release/v1.29.4/bin/linux/arm64/kubectl
+        sha256: 61537408eedcad064d7334384aed508a8aa1ea786311b87b505456a2e0535d36
         dest: open-lens/binaries/client/linux/arm64
         dest-filename: kubectl
         x-checker-data:
@@ -300,8 +300,8 @@ modules:
 
       - type: archive
         only-arches: [x86_64]
-        url: https://get.helm.sh/helm-v3.14.2-linux-amd64.tar.gz
-        sha256: 0885a501d586c1e949e9b113bf3fb3290b0bbf74db9444a1d8c2723a143006a5
+        url: https://get.helm.sh/helm-v3.14.4-linux-amd64.tar.gz
+        sha256: a5844ef2c38ef6ddf3b5a8f7d91e7e0e8ebc39a38bb3fc8013d629c1ef29c259
         dest: open-lens/binaries/client/linux/x64
         x-checker-data:
           type: anitya
@@ -311,8 +311,8 @@ modules:
 
       - type: archive
         only-arches: [aarch64]
-        url: https://get.helm.sh/helm-v3.14.2-linux-arm64.tar.gz
-        sha256: c65d6a9557bb359abc2c0d26670de850b52327dc3976ad6f9e14c298ea3e1b61
+        url: https://get.helm.sh/helm-v3.14.4-linux-arm64.tar.gz
+        sha256: 113ccc53b7c57c2aba0cd0aa560b5500841b18b5210d78641acfddc53dac8ab2
         dest: open-lens/binaries/client/linux/arm64
         x-checker-data:
           type: anitya
