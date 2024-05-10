@@ -35,8 +35,8 @@ modules:
       - '*'
     sources:
       - type: archive
-        url: https://github.com/libvips/libvips/archive/refs/tags/v8.15.1.tar.gz
-        sha256: 5701445a076465a3402a135d13c0660d909beb8efc4f00fbbe82392e243497f2
+        url: https://github.com/libvips/libvips/archive/refs/tags/v8.15.2a.tar.gz
+        sha256: e59d50fd7d4594b86b86e6cc03e7c8ec7fbeaae910cf0e525f45e7adfe52cba6
         x-checker-data:
           type: anitya
           project-id: 5097
@@ -51,8 +51,8 @@ modules:
         strip-components: 2
         only-arches:
           - x86_64
-        url: https://github.com/Azure/kubelogin/releases/download/v0.1.1/kubelogin-linux-amd64.zip
-        sha256: 51938ead06738bce6bb8fa4418fe043a5106a7d8bad037a65b57170c4f3fba0e
+        url: https://github.com/Azure/kubelogin/releases/download/v0.1.3/kubelogin-linux-amd64.zip
+        sha256: 3799622441a42ae612579e2d9480c731335033660baf95df375f7f407b76c80f
         x-checker-data:
           type: anitya
           project-id: 341508
@@ -61,8 +61,8 @@ modules:
         strip-components: 2
         only-arches:
           - aarch64
-        url: https://github.com/Azure/kubelogin/releases/download/v0.1.1/kubelogin-linux-arm64.zip
-        sha256: cc65e86d4aabc087ae2930e4d721435b862fd36674be78ff41a0034f87b626fb
+        url: https://github.com/Azure/kubelogin/releases/download/v0.1.3/kubelogin-linux-arm64.zip
+        sha256: 8dc0ecb3e5ee989721e2eb6581302dbd3a256d8a9c648688b9d9569236e24b93
         x-checker-data:
           type: anitya
           project-id: 341508
@@ -77,7 +77,7 @@ modules:
         only-arches:
           - x86_64
         url: https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
-        sha256: 0c4174b2d8a3a587006388f27e6cde9e2e93920ed6caa2e31ce96bf12b5c36a8
+        sha256: 19129c9b93e15f227fc310954318709db59f813caa95687160425d2f26b9c49a
         x-checker-data:
           type: rotating-url
           url: https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
@@ -85,7 +85,7 @@ modules:
         only-arches:
           - aarch64
         url: https://awscli.amazonaws.com/awscli-exe-linux-aarch64.zip
-        sha256: 982b95ad284765fb81eac32a3edb68afe6343ea9b1159efb536fdd17f764da9d
+        sha256: ae97784ddc846a9c527964c98ed3adf7c33aca2e274ff7ca309d22f490de4972
         x-checker-data:
           type: rotating-url
           url: https://awscli.amazonaws.com/awscli-exe-linux-aarch64.zip
@@ -244,7 +244,7 @@ modules:
 
       - type: file
         url: https://storage.googleapis.com/kubernetes-release/release/stable-1.txt
-        sha256: 94d1d1b39a6818762d490af20aa699187ae3cf303c6646ae528a943191ccbbde
+        sha256: e421fb62e0c36af1af1040ed49dbac7345831137deb06247b1e9694a05ddea3f
         dest-filename: kubectl-version.txt
         x-checker-data:
           type: rotating-url
@@ -276,8 +276,8 @@ modules:
 
       - type: file
         only-arches: [x86_64]
-        url: https://storage.googleapis.com/kubernetes-release/release/v1.29.2/bin/linux/amd64/kubectl
-        sha256: 7816d067740f47f949be826ac76943167b7b3a38c4f0c18b902fffa8779a5afa
+        url: https://storage.googleapis.com/kubernetes-release/release/v1.30.0/bin/linux/amd64/kubectl
+        sha256: 7c3807c0f5c1b30110a2ff1e55da1d112a6d0096201f1beb81b269f582b5d1c5
         dest: open-lens/binaries/client/linux/x64
         dest-filename: kubectl
         x-checker-data:
@@ -288,8 +288,8 @@ modules:
 
       - type: file
         only-arches: [aarch64]
-        url: https://storage.googleapis.com/kubernetes-release/release/v1.29.2/bin/linux/arm64/kubectl
-        sha256: 3507ecb4224cf05ae2151a98d4932253624e7762159936d5347b19fe037655ca
+        url: https://storage.googleapis.com/kubernetes-release/release/v1.30.0/bin/linux/arm64/kubectl
+        sha256: 669af0cf520757298ea60a8b6eb6b719ba443a9c7d35f36d3fb2fd7513e8c7d2
         dest: open-lens/binaries/client/linux/arm64
         dest-filename: kubectl
         x-checker-data:
@@ -300,8 +300,8 @@ modules:
 
       - type: archive
         only-arches: [x86_64]
-        url: https://get.helm.sh/helm-v3.14.2-linux-amd64.tar.gz
-        sha256: 0885a501d586c1e949e9b113bf3fb3290b0bbf74db9444a1d8c2723a143006a5
+        url: https://get.helm.sh/helm-v3.14.4-linux-amd64.tar.gz
+        sha256: a5844ef2c38ef6ddf3b5a8f7d91e7e0e8ebc39a38bb3fc8013d629c1ef29c259
         dest: open-lens/binaries/client/linux/x64
         x-checker-data:
           type: anitya
@@ -311,8 +311,8 @@ modules:
 
       - type: archive
         only-arches: [aarch64]
-        url: https://get.helm.sh/helm-v3.14.2-linux-arm64.tar.gz
-        sha256: c65d6a9557bb359abc2c0d26670de850b52327dc3976ad6f9e14c298ea3e1b61
+        url: https://get.helm.sh/helm-v3.14.4-linux-arm64.tar.gz
+        sha256: 113ccc53b7c57c2aba0cd0aa560b5500841b18b5210d78641acfddc53dac8ab2
         dest: open-lens/binaries/client/linux/arm64
         x-checker-data:
           type: anitya
