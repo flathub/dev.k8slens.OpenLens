@@ -22,25 +22,7 @@
     <launchable type="desktop-id">dev.k8slens.OpenLens.desktop</launchable>
     <screenshots>
         <screenshot type="default">
-            <image>https://k8slens.dev/images/lens-5-screenshot.png</image>
-        </screenshot>
-        <screenshot>
-            <image>https://k8slens.dev/images/lens-command-palette-screenshot.png</image>
-        </screenshot>
-        <screenshot>
-            <image>https://k8slens.dev/images/lens-stats-screenshot.png</image>
-        </screenshot>
-        <screenshot>
-            <image>https://k8slens.dev/images/screenshot-logs.png</image>
-        </screenshot>
-        <screenshot>
-            <image>https://k8slens.dev/images/screenshot-terminal.png</image>
-        </screenshot>
-        <screenshot>
-            <image>https://k8slens.dev/images/screenshot-helm-charts2.png</image>
-        </screenshot>
-        <screenshot>
-            <image>https://k8slens.dev/images/screenshot-extensions.png</image>
+            <image>https://raw.githubusercontent.com/lensapp/lens/lens-desktop/assets/hero-home.png</image>
         </screenshot>
     </screenshots>
     <url type="homepage">https://k8slens.dev/</url>
