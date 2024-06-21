@@ -77,7 +77,7 @@ modules:
         only-arches:
           - x86_64
         url: https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
-        sha256: 0c4174b2d8a3a587006388f27e6cde9e2e93920ed6caa2e31ce96bf12b5c36a8
+        sha256: 229bdc40a4b072c99570e2d07cbc1e1bd6ea67ca10f018b54271189a61f9b067
         x-checker-data:
           type: rotating-url
           url: https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
@@ -85,7 +85,7 @@ modules:
         only-arches:
           - aarch64
         url: https://awscli.amazonaws.com/awscli-exe-linux-aarch64.zip
-        sha256: 982b95ad284765fb81eac32a3edb68afe6343ea9b1159efb536fdd17f764da9d
+        sha256: d382fcf9b7113e17936b0b8389dd719d9fad4342f3c07dd7b36f1f8f4175f80d
         x-checker-data:
           type: rotating-url
           url: https://awscli.amazonaws.com/awscli-exe-linux-aarch64.zip
@@ -244,7 +244,7 @@ modules:
 
       - type: file
         url: https://storage.googleapis.com/kubernetes-release/release/stable-1.txt
-        sha256: 94d1d1b39a6818762d490af20aa699187ae3cf303c6646ae528a943191ccbbde
+        sha256: 5e34d90248f4bdf271a942cf960407e399c2bd2b7c7e34061e62e0c127ce3944
         dest-filename: kubectl-version.txt
         x-checker-data:
           type: rotating-url
