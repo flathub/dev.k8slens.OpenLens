@@ -51,8 +51,8 @@ modules:
         strip-components: 2
         only-arches:
           - x86_64
-        url: https://github.com/Azure/kubelogin/releases/download/v0.1.3/kubelogin-linux-amd64.zip
-        sha256: 3799622441a42ae612579e2d9480c731335033660baf95df375f7f407b76c80f
+        url: https://github.com/Azure/kubelogin/releases/download/v0.1.4/kubelogin-linux-amd64.zip
+        sha256: cda67158030669963f19abe7c47edbc941d842d18790c599e444998cbab6aae7
         x-checker-data:
           type: anitya
           project-id: 341508
@@ -61,8 +61,8 @@ modules:
         strip-components: 2
         only-arches:
           - aarch64
-        url: https://github.com/Azure/kubelogin/releases/download/v0.1.3/kubelogin-linux-arm64.zip
-        sha256: 8dc0ecb3e5ee989721e2eb6581302dbd3a256d8a9c648688b9d9569236e24b93
+        url: https://github.com/Azure/kubelogin/releases/download/v0.1.4/kubelogin-linux-arm64.zip
+        sha256: e66463b0ef2ec18af23daffd61c709d9c2cf16323e8e0c193270d2f281dd5825
         x-checker-data:
           type: anitya
           project-id: 341508
@@ -77,7 +77,7 @@ modules:
         only-arches:
           - x86_64
         url: https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
-        sha256: 6bb477b6207979dedfd6848012b45709d55f0ff86abe1efc9ac37045b7c673ba
+        sha256: 62bc34cd5c2a5b2fa3647913e8c0809abf8ab20676fbb87ff43b61ebcd0ef34a
         x-checker-data:
           type: rotating-url
           url: https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
@@ -85,7 +85,7 @@ modules:
         only-arches:
           - aarch64
         url: https://awscli.amazonaws.com/awscli-exe-linux-aarch64.zip
-        sha256: d64b1a1a11cd169a606daf435f355a23ab87535712e0b8b37013a7e3ef68df63
+        sha256: d95fe56d0ce10ee0c74268b124aaa62cec4067957bb64af5954b8683f6dfc869
         x-checker-data:
           type: rotating-url
           url: https://awscli.amazonaws.com/awscli-exe-linux-aarch64.zip
