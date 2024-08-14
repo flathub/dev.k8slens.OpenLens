@@ -35,8 +35,8 @@ modules:
       - '*'
     sources:
       - type: archive
-        url: https://github.com/libvips/libvips/archive/refs/tags/v8.15.2.tar.gz
-        sha256: 8c3ece7be367636fd676573a8ff22170c07e95e81fd94f2d1eb9966800522e1f
+        url: https://github.com/libvips/libvips/archive/refs/tags/v8.15.3.tar.gz
+        sha256: c23a820443241c35e62f1f1f0a1f6c199b37e07d98e3268a7fa9db43309fd67d
         x-checker-data:
           type: anitya
           project-id: 5097
@@ -77,7 +77,7 @@ modules:
         only-arches:
           - x86_64
         url: https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
-        sha256: f7d473737dbcbed360d4f542b1b4dd4d737ac5121a98a5814404b2bbf746ae53
+        sha256: ac881fc31fdecad7859d64a7946577c7d8fc80756ffb00e4a896e7b28544f995
         x-checker-data:
           type: rotating-url
           url: https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
@@ -85,7 +85,7 @@ modules:
         only-arches:
           - aarch64
         url: https://awscli.amazonaws.com/awscli-exe-linux-aarch64.zip
-        sha256: bd652d3c2632b4a2a8db01e72eb6dffd02bdc54813edaa84c96c67ca769a6cdf
+        sha256: 4d3904ab009dcfa2dd2c292459cbcaef7142511450b36ef607e93edf71693e53
         x-checker-data:
           type: rotating-url
           url: https://awscli.amazonaws.com/awscli-exe-linux-aarch64.zip
@@ -244,7 +244,7 @@ modules:
 
       - type: file
         url: https://storage.googleapis.com/kubernetes-release/release/stable-1.txt
-        sha256: 1fcfb08a1a0558b38bed796233abc5ce86be8f3b0edc012dbac9e13bbdf92e26
+        sha256: 696ff09feaa5f95ebc56206a2be17ab6627a26f327977b9b108cf63e1ae33c66
         dest-filename: kubectl-version.txt
         x-checker-data:
           type: rotating-url
@@ -276,8 +276,8 @@ modules:
 
       - type: file
         only-arches: [x86_64]
-        url: https://storage.googleapis.com/kubernetes-release/release/v1.30.3/bin/linux/amd64/kubectl
-        sha256: abd83816bd236b266c3643e6c852b446f068fe260f3296af1a25b550854ec7e5
+        url: https://storage.googleapis.com/kubernetes-release/release/v1.31.0/bin/linux/amd64/kubectl
+        sha256: 7c27adc64a84d1c0cc3dcf7bf4b6e916cc00f3f576a2dbac51b318d926032437
         dest: open-lens/binaries/client/linux/x64
         dest-filename: kubectl
         x-checker-data:
@@ -288,8 +288,8 @@ modules:
 
       - type: file
         only-arches: [aarch64]
-        url: https://storage.googleapis.com/kubernetes-release/release/v1.30.3/bin/linux/arm64/kubectl
-        sha256: c6f9568f930b16101089f1036677bb15a3185e9ed9b8dbce2f518fb5a52b6787
+        url: https://storage.googleapis.com/kubernetes-release/release/v1.31.0/bin/linux/arm64/kubectl
+        sha256: f42832db7d77897514639c6df38214a6d8ae1262ee34943364ec1ffaee6c009c
         dest: open-lens/binaries/client/linux/arm64
         dest-filename: kubectl
         x-checker-data:
