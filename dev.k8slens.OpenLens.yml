@@ -77,7 +77,7 @@ modules:
         only-arches:
           - x86_64
         url: https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
-        sha256: ed46356f6358c0dfa30416899bf3efe0001689520ffce22c128f5bc617e8f4c3
+        sha256: 507413a75ded890308445aeb8765668c9e34eabafd84af422cff65ced7ef0db1
         x-checker-data:
           type: rotating-url
           url: https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
@@ -85,7 +85,7 @@ modules:
         only-arches:
           - aarch64
         url: https://awscli.amazonaws.com/awscli-exe-linux-aarch64.zip
-        sha256: 06935480941c8ca68fec90318c92be357941f81435c4519069d798124cb2b6f2
+        sha256: a24adfb5dd8e78d420207146b09c294236e6171a94edd2460dd0090339848663
         x-checker-data:
           type: rotating-url
           url: https://awscli.amazonaws.com/awscli-exe-linux-aarch64.zip
@@ -300,8 +300,8 @@ modules:
 
       - type: archive
         only-arches: [x86_64]
-        url: https://get.helm.sh/helm-v3.15.4-linux-amd64.tar.gz
-        sha256: 11400fecfc07fd6f034863e4e0c4c4445594673fd2a129e701fe41f31170cfa9
+        url: https://get.helm.sh/helm-v3.16.1-linux-amd64.tar.gz
+        sha256: e57e826410269d72be3113333dbfaac0d8dfdd1b0cc4e9cb08bdf97722731ca9
         dest: open-lens/binaries/client/linux/x64
         x-checker-data:
           type: anitya
@@ -311,8 +311,8 @@ modules:
 
       - type: archive
         only-arches: [aarch64]
-        url: https://get.helm.sh/helm-v3.15.4-linux-arm64.tar.gz
-        sha256: fa419ecb139442e8a594c242343fafb7a46af3af34041c4eac1efcc49d74e626
+        url: https://get.helm.sh/helm-v3.16.1-linux-arm64.tar.gz
+        sha256: 780b5b86f0db5546769b3e9f0204713bbdd2f6696dfdaac122fbe7f2f31541d2
         dest: open-lens/binaries/client/linux/arm64
         x-checker-data:
           type: anitya
