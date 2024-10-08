@@ -35,8 +35,8 @@ modules:
       - '*'
     sources:
       - type: archive
-        url: https://github.com/libvips/libvips/archive/refs/tags/v8.15.3.tar.gz
-        sha256: c23a820443241c35e62f1f1f0a1f6c199b37e07d98e3268a7fa9db43309fd67d
+        url: https://github.com/libvips/libvips/archive/refs/tags/v8.15.4.tar.gz
+        sha256: 16afc1bf2218a98c1dc35ec4d94ef61d66c293eeb2b399fd40282dfb2211ea95
         x-checker-data:
           type: anitya
           project-id: 5097
@@ -77,7 +77,7 @@ modules:
         only-arches:
           - x86_64
         url: https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
-        sha256: 133ae8d4b19e84ed0b8a7db735ac2d99f868ab465c9650b076e62ce6324d4a9a
+        sha256: 88b081d2d0e51be515d056dd03680701c4bd3f41d832ac380a57e6b0fe51432c
         x-checker-data:
           type: rotating-url
           url: https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
@@ -85,7 +85,7 @@ modules:
         only-arches:
           - aarch64
         url: https://awscli.amazonaws.com/awscli-exe-linux-aarch64.zip
-        sha256: 9f9d5223a5f693612e37a6d793ee7895200d736c6c95af578aac3759214c3281
+        sha256: 8c1aa251eccc374358c4607ed46bdc038a7f04d432790a8229d557618b8524e5
         x-checker-data:
           type: rotating-url
           url: https://awscli.amazonaws.com/awscli-exe-linux-aarch64.zip
