@@ -35,8 +35,8 @@ modules:
       - '*'
     sources:
       - type: archive
-        url: https://github.com/libvips/libvips/archive/refs/tags/v8.16.0.tar.gz
-        sha256: d28d7bf7e3f8fa17390c255ace4a05a1c56459e1f6015319f4847ea0733593b3
+        url: https://github.com/libvips/libvips/archive/refs/tags/v8.18.0.tar.gz
+        sha256: 33bf7fad3d775389a2bfbae4b391196ffedcfa1f3fed258ec506d9c0241b0612
         x-checker-data:
           type: anitya
           project-id: 5097
@@ -51,8 +51,8 @@ modules:
         strip-components: 2
         only-arches:
           - x86_64
-        url: https://github.com/Azure/kubelogin/releases/download/v0.1.4/kubelogin-linux-amd64.zip
-        sha256: cda67158030669963f19abe7c47edbc941d842d18790c599e444998cbab6aae7
+        url: https://github.com/Azure/kubelogin/releases/download/v0.2.13/kubelogin-linux-amd64.zip
+        sha256: 21b7cfa009b3b4044663a0f9a9ec033deddd668ca4502348f763bd93c51fb806
         x-checker-data:
           type: anitya
           project-id: 341508
@@ -61,8 +61,8 @@ modules:
         strip-components: 2
         only-arches:
           - aarch64
-        url: https://github.com/Azure/kubelogin/releases/download/v0.1.4/kubelogin-linux-arm64.zip
-        sha256: e66463b0ef2ec18af23daffd61c709d9c2cf16323e8e0c193270d2f281dd5825
+        url: https://github.com/Azure/kubelogin/releases/download/v0.2.13/kubelogin-linux-arm64.zip
+        sha256: e7a2beda1fd37165d2ea8dfa97e7fb31061be0a959e8ebe6bb2511883d013d35
         x-checker-data:
           type: anitya
           project-id: 341508
@@ -77,7 +77,7 @@ modules:
         only-arches:
           - x86_64
         url: https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
-        sha256: 90d06c744f692418a37a910b265cc4d0cfed1352a6221a207d56cf28d23e2679
+        sha256: 6b8d55976cb44095e4ce89ac8723d200ca82eb9331057ef93ccd858cab22216c
         x-checker-data:
           type: rotating-url
           url: https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
@@ -85,7 +85,7 @@ modules:
         only-arches:
           - aarch64
         url: https://awscli.amazonaws.com/awscli-exe-linux-aarch64.zip
-        sha256: 9bc8f5631d9682af25710553ece7dc63d02aa70216403ddf6cd1348e476ee9b2
+        sha256: 34964be5b184c2bf6d39c6c013aa8ea4ee742da6d5435203aa301aa9cedf871a
         x-checker-data:
           type: rotating-url
           url: https://awscli.amazonaws.com/awscli-exe-linux-aarch64.zip
@@ -252,8 +252,8 @@ modules:
 
       - type: file
         only-arches: [x86_64]
-        url: https://github.com/lensapp/lens-k8s-proxy/releases/download/v0.3.2/lens-k8s-proxy-linux-amd64
-        sha256: 965e783290a0d9edcaeea89a6d10f4c03a79792def56f61700c5490b442bc87c
+        url: https://github.com/lensapp/lens-k8s-proxy/releases/download/v0.4.0/lens-k8s-proxy-linux-amd64
+        sha256: f4b664010a102a404e0380619eca73f5dea3ea66b0ed7122dbcf0e7f9f6905ae
         dest: open-lens/binaries/client/linux/x64
         dest-filename: lens-k8s-proxy
         x-checker-data:
@@ -264,8 +264,8 @@ modules:
 
       - type: file
         only-arches: [aarch64]
-        url: https://github.com/lensapp/lens-k8s-proxy/releases/download/v0.3.2/lens-k8s-proxy-linux-arm64
-        sha256: 9df1822c52b5ffd043c97e1bef4fd75d11910d8e3e73911a3c32de8274e73bdf
+        url: https://github.com/lensapp/lens-k8s-proxy/releases/download/v0.4.0/lens-k8s-proxy-linux-arm64
+        sha256: 5b47055cb227bc5610e889ab7c852f4a69aef74ede99fd0c88656bdebf3a3ba4
         dest: open-lens/binaries/client/linux/arm64
         dest-filename: lens-k8s-proxy
         x-checker-data:
@@ -300,8 +300,8 @@ modules:
 
       - type: archive
         only-arches: [x86_64]
-        url: https://get.helm.sh/helm-v3.16.2-linux-amd64.tar.gz
-        sha256: 9318379b847e333460d33d291d4c088156299a26cd93d570a7f5d0c36e50b5bb
+        url: https://get.helm.sh/helm-v4.0.4-linux-amd64.tar.gz
+        sha256: 29454bc351f4433e66c00f5d37841627cbbcc02e4c70a6d796529d355237671c
         dest: open-lens/binaries/client/linux/x64
         x-checker-data:
           type: anitya
@@ -311,8 +311,8 @@ modules:
 
       - type: archive
         only-arches: [aarch64]
-        url: https://get.helm.sh/helm-v3.16.2-linux-arm64.tar.gz
-        sha256: 1888301aeb7d08a03b6d9f4d2b73dcd09b89c41577e80e3455c113629fc657a4
+        url: https://get.helm.sh/helm-v4.0.4-linux-arm64.tar.gz
+        sha256: 16b88acc6503d646b7537a298e7389bef469c5cc9ebadf727547abe9f6a35903
         dest: open-lens/binaries/client/linux/arm64
         x-checker-data:
           type: anitya
