@@ -1,3 +1,4 @@
 {
-  "disable-external-data-checker": true
+  "disable-external-data-checker": true,
+  "end-of-life": "The open source version of Lens Desktop has been retired and is no longer maintained."
 }
